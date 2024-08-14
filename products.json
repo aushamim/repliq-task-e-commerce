@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "category": {
+            "id": 7,
+            "name": "Juices",
+            "color_category": "purple"
+        },
+        "name": "Fruit Juices",
+        "image": "https://i.ibb.co/MRfLw9j/2-2.png",
+        "price": "50.00",
+        "discount": "0.00",
+        "featured": false,
+        "best_seller": false,
+        "sale": null
+    },
+    {
+        "id": 2,
+        "category": {
+            "id": 8,
+            "name": "Chocolates",
+            "color_category": "slate"
+        },
+        "name": "Chocolates",
+        "image": "https://i.ibb.co/2KbYkSr/2-3.png",
+        "price": "100.00",
+        "discount": "2.00",
+        "featured": false,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 3,
+        "category": {
+            "id": 7,
+            "name": "Juices",
+            "color_category": "purple"
+        },
+        "name": "Orange Juice",
+        "image": "https://i.ibb.co/Kq5qPvp/4.png",
+        "price": "50.00",
+        "discount": "10.00",
+        "featured": true,
+        "best_seller": false,
+        "sale": null
+    },
+    {
+        "id": 4,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Kiwi",
+        "image": "https://i.ibb.co/25f3Kmr/1-2.png",
+        "price": "120.00",
+        "discount": "20.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 5,
+        "category": {
+            "id": 3,
+            "name": "Vegetable",
+            "color_category": "green"
+        },
+        "name": "Mixed Vegitables",
+        "image": "https://i.ibb.co/VLTtQ6Q/2-4.png",
+        "price": "100.00",
+        "discount": "40.00",
+        "featured": false,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 6,
+        "category": {
+            "id": 7,
+            "name": "Juices",
+            "color_category": "purple"
+        },
+        "name": "Pineapple Juice",
+        "image": "https://i.ibb.co/Kq5qPvp/4.png",
+        "price": "50.00",
+        "discount": "5.00",
+        "featured": false,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 7,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Strawberry",
+        "image": "https://i.ibb.co/2FYb41b/small-2.png",
+        "price": "100.00",
+        "discount": "40.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": 1
+    },
+    {
+        "id": 8,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Red Grapes",
+        "image": "https://i.ibb.co/yqtLbrx/small-1.png",
+        "price": "100.00",
+        "discount": "20.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 9,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Oranges",
+        "image": "https://i.ibb.co/6vLmX01/711.png",
+        "price": "100.00",
+        "discount": "20.00",
+        "featured": true,
+        "best_seller": false,
+        "sale": 1
+    },
+    {
+        "id": 10,
+        "category": {
+            "id": 7,
+            "name": "Juices",
+            "color_category": "purple"
+        },
+        "name": "Lemon Juice",
+        "image": "https://i.ibb.co/1ZNXbLW/1-3.png",
+        "price": "100.00",
+        "discount": "50.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": 1
+    },
+    {
+        "id": 11,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Lemons",
+        "image": "https://i.ibb.co/dPj6LQw/3.png",
+        "price": "30.00",
+        "discount": "0.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 12,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Raspberry",
+        "image": "https://i.ibb.co/JdQRpSj/big-2.png",
+        "price": "200.00",
+        "discount": "10.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": 1
+    },
+    {
+        "id": 13,
+        "category": {
+            "id": 5,
+            "name": "Bread",
+            "color_category": "orange"
+        },
+        "name": "Muffins",
+        "image": "https://i.ibb.co/ry3v0hM/big-1.png",
+        "price": "50.00",
+        "discount": "0.00",
+        "featured": true,
+        "best_seller": false,
+        "sale": null
+    },
+    {
+        "id": 14,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Oranges",
+        "image": "https://i.ibb.co/GtYHDhS/1-4.png",
+        "price": "140.00",
+        "discount": "20.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": null
+    },
+    {
+        "id": 15,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Mango",
+        "image": "https://i.ibb.co/41S2ZB8/1.png",
+        "price": "90.00",
+        "discount": "10.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": 1
+    },
+    {
+        "id": 16,
+        "category": {
+            "id": 1,
+            "name": "Fruits",
+            "color_category": "lime"
+        },
+        "name": "Black Grapes",
+        "image": "https://i.ibb.co/mTdMxqj/111.png",
+        "price": "150.00",
+        "discount": "50.00",
+        "featured": true,
+        "best_seller": true,
+        "sale": 1
+    }
+]
