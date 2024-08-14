@@ -1,5 +1,25 @@
+import axios from "axios";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+
+export const useProductsStore = create((set) => ({
+  products: [],
+  loading: false,
+  error: null,
+  fetchProducts: async () => {
+    set({ loading: true, error: null });
+
+    try {
+      const response = await axios.get(
+        "https://raw.githubusercontent.com/aushamim/repliq-task-e-commerce/main/products.json"
+      );
+      set({ products: response.data.reverse(), loading: false });
+    } catch (error) {
+      set({ error: error.message, loading: false });
+    }
+  },
+}));
+useProductsStore.getState().fetchProducts();
 
 export const useCartStore = create(
   persist(
@@ -46,6 +66,6 @@ export const useCartStore = create(
         });
       },
     }),
-    { name: "cart", storage: localStorage }
+    { name: "cart" }
   )
 );

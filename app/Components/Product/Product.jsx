@@ -5,41 +5,9 @@ import React from "react";
 
 const Product = ({ product }) => {
   const addToCart = useCartStore((state) => state.addToCart);
-  const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const increaseQuantity = useCartStore((state) => state.increaseQuantity);
-  const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
 
-  const cart = useCartStore((state) => state.cart);
-  console.log(cart);
   return (
     <div>
-      <div>
-        <button
-          className="btn"
-          onClick={() => {
-            removeFromCart(product?.id);
-          }}
-        >
-          remove
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            increaseQuantity(product?.id);
-          }}
-        >
-          inc
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            decreaseQuantity(product?.id);
-          }}
-        >
-          dec
-        </button>
-      </div>
-
       <div className="border border-gray-100 py-8 rounded hover:border-gray-50 hover:shadow-xl transition duration-300 relative">
         {parseFloat(product?.discount) > 0 ? (
           <p className="font-semibold text-xs px-2 py-1 text-lime-700 bg-lime-200 rounded-l-full absolute top-3 right-0">

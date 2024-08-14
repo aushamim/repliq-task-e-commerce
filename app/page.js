@@ -1,4 +1,4 @@
-import Product from "./Components/Product/Product";
+import FeaturedProducts from "./Components/FeaturedProducts/FeaturedProducts";
 
 export default function Home() {
   return (
@@ -32,23 +32,7 @@ export default function Home() {
         </div>
 
         <div className="mt-5 xl:mt-10 grid grid-cols-2 xl:grid-cols-4 gap-7">
-          <Product
-            product={{
-              id: 1,
-              category: {
-                id: 7,
-                name: "Juices",
-                color_category: "purple",
-              },
-              name: "Fruit Juices",
-              image: "https://i.ibb.co/MRfLw9j/2-2.png",
-              price: "50.00",
-              discount: "10.00",
-              featured: false,
-              best_seller: false,
-              sale: null,
-            }}
-          ></Product>
+          <FeaturedProducts />
         </div>
       </div>
       {/* Products Section */}
