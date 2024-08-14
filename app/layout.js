@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-full xl:w-4/5 mx-auto`}>
+      <body className={`${inter.className} w-full xl:w-2/3 mx-auto`}>
         <Toaster />
         <Nav />
         {children}
