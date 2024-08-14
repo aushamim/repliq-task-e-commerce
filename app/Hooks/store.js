@@ -4,11 +4,9 @@ import { persist } from "zustand/middleware";
 
 export const useProductsStore = create((set) => ({
   products: [],
-  loading: false,
+  loading: true,
   error: null,
   fetchProducts: async () => {
-    set({ loading: true, error: null });
-
     try {
       const response = await axios.get(
         "https://raw.githubusercontent.com/aushamim/repliq-task-e-commerce/main/products.json"

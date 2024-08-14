@@ -73,7 +73,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-50">
         <label
           htmlFor="navbar"
           aria-label="close sidebar"
