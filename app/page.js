@@ -1,3 +1,5 @@
+import Product from "./Components/Product/Product";
+
 export default function Home() {
   return (
     <main className="p-5">
@@ -21,7 +23,34 @@ export default function Home() {
       {/* Hero Section */}
 
       {/* Products Section */}
-      <div></div>
+      <div className="mt-10 xl:mt-16">
+        <div>
+          <h1 className="text-xl xl:text-5xl font-bold text-center">
+            Featured Products
+          </h1>
+          <span className="w-20 h-1 bg-orange-300 block mx-auto mt-2"></span>
+        </div>
+
+        <div className="mt-5 xl:mt-10 grid grid-cols-2 xl:grid-cols-4 gap-7">
+          <Product
+            product={{
+              id: 1,
+              category: {
+                id: 7,
+                name: "Juices",
+                color_category: "purple",
+              },
+              name: "Fruit Juices",
+              image: "https://i.ibb.co/MRfLw9j/2-2.png",
+              price: "50.00",
+              discount: "10.00",
+              featured: false,
+              best_seller: false,
+              sale: null,
+            }}
+          ></Product>
+        </div>
+      </div>
       {/* Products Section */}
     </main>
   );
