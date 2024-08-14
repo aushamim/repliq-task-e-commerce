@@ -14,7 +14,7 @@ const submitForm = async (values, actions) => {
 const Login = () => {
   return (
     <div className="min-h-[90vh]">
-      <div className="w-1/3 mx-auto mt-16">
+      <div className="xl:w-1/3 px-7 xl:px-0 mx-auto mt-16">
         <div>
           <h1 className="text-5xl font-bold text-center">Login</h1>
           <span className="w-20 h-1 bg-orange-300 block mx-auto mt-2"></span>
@@ -50,7 +50,7 @@ const Login = () => {
                     className="btn w-full"
                     disabled={props.isSubmitting}
                   >
-                    Submit
+                    Login
                   </button>
                 </div>
               </Form>
