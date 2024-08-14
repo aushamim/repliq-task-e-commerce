@@ -2,7 +2,7 @@ import Product from "./Components/Product/Product";
 
 export default function Home() {
   return (
-    <main className="p-5">
+    <main className="p-5 xl:p-0">
       {/* Hero Section */}
       <div className="xl:mt-10 xl:pt-24 p-7 xl:px-20 w-full min-h-32 xl:min-h-[35rem] bg-[url(/assets/images/hero.png)] bg-no-repeat bg-cover rounded-lg">
         <p className="text-xs xl:text-base font-semibold text-orange-500 uppercase">
