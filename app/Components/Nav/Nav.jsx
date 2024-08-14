@@ -34,10 +34,10 @@ const Nav = () => {
       <input id="navbar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
-        <div className="flex gap-5 items-center p-3 xl:px-0">
+        <div className="flex gap-5 items-center p-5 xl:px-0 xl:py-3">
           <div>
-            <Link href="/" className="text-2xl font-semibold">
-              Alu
+            <Link href="/" className="text-3xl font-bold">
+              🥔Alu
             </Link>
           </div>
 
