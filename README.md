@@ -1,5 +1,7 @@
 # E-commerce task by REPLIQ Limited
 
+### Live Site: [Alu Shop](https://dreamy-concha-10ab03.netlify.app/)
+
 ## Requirements
 
 - Home/Landing ✅
