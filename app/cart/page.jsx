@@ -14,7 +14,7 @@ const Cart = () => {
   } = useCartStore((state) => state);
 
   return (
-    <div className="mt-10 min-h-[70vh]">
+    <div className="mt-10 min-h-[80vh]">
       <CartIndicator page="cart" />
 
       {cart?.length > 0 ? (
