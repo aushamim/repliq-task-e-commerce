@@ -114,7 +114,7 @@ const Nav = () => {
               <li>
                 <Link
                   href="/admin"
-                  className="hover:text-orange-500 duration-300 ml-3"
+                  className="hover:text-orange-500 duration-300"
                 >
                   Admin
                 </Link>
@@ -132,7 +132,7 @@ const Nav = () => {
             <li>
               <Link
                 href="/user/login"
-                className="hover:text-orange-500 duration-300 ml-3"
+                className="hover:text-orange-500 duration-300"
               >
                 Login
               </Link>
