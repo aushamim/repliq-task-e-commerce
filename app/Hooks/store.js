@@ -1,7 +1,9 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+// Products
 export const useProductsStore = create((set) => ({
   products: [],
   loading: true,
@@ -19,12 +21,15 @@ export const useProductsStore = create((set) => ({
 }));
 useProductsStore.getState().fetchProducts();
 
+// Cart
 export const useCartStore = create(
   persist(
     (set) => ({
       cart: [],
+      totalPrice: 0,
       addToCart: (product) => {
         set((state) => {
+          toast.success(`${product.name} added to cart.`);
           const cartItem = state.cart.find(
             (item) => item.product.id === product.id
           );
@@ -32,36 +37,76 @@ export const useCartStore = create(
             return {
               cart: state.cart.map((item) =>
                 item.product.id === product.id
-                  ? { ...item, count: item.count + 1 }
+                  ? { ...item, quantity: item.quantity + 1 }
                   : item
               ),
             };
           } else {
-            return { cart: [...state.cart, { product, count: 1 }] };
+            return { cart: [...state.cart, { product, quantity: 1 }] };
           }
         });
-      },
-      removeFromCart: (id) =>
+
         set((state) => ({
-          cart: state.cart.filter((item) => item.product.id !== id),
-        })),
-      increaseQuantity: (id) => {
-        set((state) => {
-          return {
-            cart: state.cart.map((item) =>
-              item.product.id === id ? { ...item, count: item.count + 1 } : item
-            ),
-          };
-        });
+          totalPrice:
+            state.totalPrice +
+            (product.price - (product.price * product.discount) / 100),
+        }));
       },
-      decreaseQuantity: (id) => {
+
+      removeFromCart: (cart_item) => {
+        set((state) => ({
+          totalPrice:
+            state.totalPrice -
+            (cart_item.product.price -
+              (cart_item.product.price * cart_item.product.discount) / 100) *
+              cart_item.quantity,
+        }));
+
         set((state) => {
+          toast.success("Successfully removed from cart.");
           return {
-            cart: state.cart.map((item) =>
-              item.product.id === id ? { ...item, count: item.count - 1 } : item
+            cart: state.cart.filter(
+              (item) => item.product.id !== cart_item.product.id
             ),
           };
         });
+        // set(state=>({totalPrice:state.totalPrice-}))
+      },
+
+      increaseQuantity: (product) => {
+        set((state) => {
+          return {
+            cart: state.cart.map((item) =>
+              item.product.id === product.id
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            ),
+          };
+        });
+
+        set((state) => ({
+          totalPrice:
+            state.totalPrice +
+            (product.price - (product.price * product.discount) / 100),
+        }));
+      },
+
+      decreaseQuantity: (product) => {
+        set((state) => {
+          return {
+            cart: state.cart.map((item) =>
+              item.product.id === product.id
+                ? { ...item, quantity: item.quantity - 1 }
+                : item
+            ),
+          };
+        });
+
+        set((state) => ({
+          totalPrice:
+            state.totalPrice -
+            (product.price - (product.price * product.discount) / 100),
+        }));
       },
     }),
     { name: "cart" }
