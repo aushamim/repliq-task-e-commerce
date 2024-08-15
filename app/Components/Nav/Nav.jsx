@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { useUserStore } from "@/app/Hooks/store";
 
 const Nav = () => {
   const routes = [
@@ -12,14 +14,6 @@ const Nav = () => {
       route: "/products",
     },
     {
-      name: "Profile",
-      route: "/user/profile",
-    },
-    {
-      name: "Admin",
-      route: "/admin",
-    },
-    {
       name: "Cart",
       route: "/cart",
     },
@@ -28,6 +22,9 @@ const Nav = () => {
       route: "/user/login",
     },
   ];
+
+  const loggedInUser = useUserStore((state) => state.loggedInUser);
+  const logout = useUserStore((state) => state.logout);
 
   return (
     <nav className="drawer drawer-end">
@@ -51,6 +48,31 @@ const Nav = () => {
                 {item.name}
               </Link>
             ))}
+
+            {loggedInUser ? (
+              <>
+                <Link
+                  href="/user/profile"
+                  className="hover:text-orange-500 duration-300 ml-3"
+                >
+                  Profile
+                </Link>
+                <Link
+                  href="/admin"
+                  className="hover:text-orange-500 duration-300 ml-3"
+                >
+                  Admin
+                </Link>
+                <button
+                  onClick={logout}
+                  className="hover:text-orange-500 duration-300 ml-3"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              ""
+            )}
           </div>
 
           <div className="flex-grow flex xl:hidden justify-end">
@@ -91,6 +113,37 @@ const Nav = () => {
               </Link>
             </li>
           ))}
+
+          {loggedInUser ? (
+            <>
+              <li>
+                <Link
+                  href="/user/profile"
+                  className="hover:text-orange-500 duration-300 ml-3"
+                >
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admin"
+                  className="hover:text-orange-500 duration-300 ml-3"
+                >
+                  Admin
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={logout}
+                  className="hover:text-orange-500 duration-300"
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            ""
+          )}
         </ul>
       </div>
     </nav>

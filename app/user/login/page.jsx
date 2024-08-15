@@ -1,5 +1,6 @@
 "use client";
 import CustomInput from "@/app/Components/CustomInputFields/CustomInput";
+import { useUserStore } from "@/app/Hooks/store";
 import { loginSchema } from "@/app/Schemas/inputValidation";
 import { Form, Formik } from "formik";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import React from "react";
 
 const submitForm = async (values, actions) => {
   console.log(values);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  useUserStore.getState().login(values);
   actions.resetForm();
 };
 
