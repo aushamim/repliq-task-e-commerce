@@ -27,3 +27,4 @@
 - Yup
 - Axios
 - Zustand
+- Recharts
