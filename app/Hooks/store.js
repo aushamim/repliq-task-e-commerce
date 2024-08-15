@@ -85,7 +85,7 @@ export const useOrderStore = create(
     (set) => ({
       orders: [],
 
-      placeOrder: (user, cart, orderDetails) =>
+      placeOrder: (user, cart, totalPrice, orderDetails) =>
         set((state) => ({
           orders: [
             ...state.orders,
@@ -93,6 +93,7 @@ export const useOrderStore = create(
               orderId: Math.random().toString(36).slice(-8).toUpperCase(),
               user,
               cart,
+              totalPrice,
               orderDetails,
             },
           ],

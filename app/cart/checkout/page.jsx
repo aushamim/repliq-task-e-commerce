@@ -30,7 +30,7 @@ const Checkout = () => {
     toast.promise(promise, {
       loading: "Placing Order",
       success: () => {
-        placeOrder(loggedInUser, cart, values);
+        placeOrder(loggedInUser, cart, totalPrice, values);
         clearCart();
         actions.resetForm();
         router.push("/cart/order-complete");
