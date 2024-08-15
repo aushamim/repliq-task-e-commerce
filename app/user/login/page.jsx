@@ -63,7 +63,7 @@ const Login = () => {
           Don&apos;t have an account?{" "}
           <Link
             href="/user/register"
-            className="hover:text-orange-500 duration-300"
+            className="text-orange-500 hover:text-orange-600 duration-300"
           >
             Register here.
           </Link>
