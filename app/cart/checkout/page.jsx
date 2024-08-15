@@ -1,7 +1,7 @@
 "use client";
 import CartIndicator from "@/app/Components/CartIndicator/CartIndicator";
 import CustomInput from "@/app/Components/CustomInputFields/CustomInput";
-import { useCartStore, useUserStore } from "@/app/Hooks/store";
+import { useCartStore, useOrderStore, useUserStore } from "@/app/Hooks/store";
 import { orderSchema } from "@/app/Schemas/inputValidation";
 import { Form, Formik } from "formik";
 import Link from "next/link";
@@ -10,10 +10,15 @@ import React from "react";
 import toast from "react-hot-toast";
 
 const Checkout = () => {
+  const router = useRouter();
   const cart = useCartStore((state) => state.cart);
   const totalPrice = useCartStore((state) => state.totalPrice);
+  const clearCart = useCartStore((state) => state.clearCart);
   const loggedInUser = useUserStore((state) => state.loggedInUser);
-  const router = useRouter();
+  const loggedInUserData = useUserStore((state) =>
+    state.users.find((user) => user.phone === loggedInUser.phone)
+  );
+  const placeOrder = useOrderStore((state) => state.placeOrder);
 
   const submitForm = (values, actions) => {
     console.log(values);
@@ -25,7 +30,8 @@ const Checkout = () => {
     toast.promise(promise, {
       loading: "Placing Order",
       success: () => {
-        useCartStore.getState().clearCart();
+        placeOrder(loggedInUser, cart, values);
+        clearCart();
         actions.resetForm();
         router.push("/cart/order-complete");
         return "Order placed successfully";
@@ -47,10 +53,10 @@ const Checkout = () => {
                 <div className="mt-3">
                   <Formik
                     initialValues={{
-                      name: "",
-                      email: "",
-                      address: "",
-                      phone: "",
+                      name: loggedInUserData ? loggedInUserData.name : "",
+                      email: loggedInUserData ? loggedInUserData.email : "",
+                      address: loggedInUserData ? loggedInUserData.address : "",
+                      phone: loggedInUserData ? loggedInUserData.phone : "",
                       notes: "",
                     }}
                     validationSchema={orderSchema}

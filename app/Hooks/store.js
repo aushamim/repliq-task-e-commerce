@@ -79,6 +79,29 @@ export const useProductsStore = create((set) => ({
 }));
 useProductsStore.getState().fetchProducts();
 
+// Orders
+export const useOrderStore = create(
+  persist(
+    (set) => ({
+      orders: [],
+
+      placeOrder: (user, cart, orderDetails) =>
+        set((state) => ({
+          orders: [
+            ...state.orders,
+            {
+              orderId: Math.random().toString(36).slice(-8).toUpperCase(),
+              user,
+              cart,
+              orderDetails,
+            },
+          ],
+        })),
+    }),
+    { name: "orders" }
+  )
+);
+
 // Cart
 export const useCartStore = create(
   persist(

@@ -6,9 +6,9 @@
   - Login/Register ✅
 - Product List ✅
   - Product Details ✅
-- Cart
-  - Delete from card
-  - Checkout
+- Cart ✅
+  - Delete from card ✅
+  - Checkout ✅
 - Admin
   - Dashboard
 - Admin
