@@ -16,7 +16,7 @@ const Checkout = () => {
   const clearCart = useCartStore((state) => state.clearCart);
   const loggedInUser = useUserStore((state) => state.loggedInUser);
   const loggedInUserData = useUserStore((state) =>
-    state.users.find((user) => user.phone === loggedInUser.phone)
+    state.users.find((user) => user.phone === loggedInUser?.phone)
   );
   const placeOrder = useOrderStore((state) => state.placeOrder);
 
