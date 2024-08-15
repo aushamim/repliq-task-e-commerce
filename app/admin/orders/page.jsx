@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const Dashboard = () => {
-  const orders = useOrderStore((state) => state.orders);
+  const orders = useOrderStore((state) => state.orders.reverse());
   return (
     <div>
       <div className="text-xl font-semibold border-b-2 w-full pb-1">
@@ -42,7 +42,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div>
-          <h1 className="mt-2 text-xl font-semibold">No Orders Yet</h1>
+          <h1 className="mt-2 text-2xl font-semibold">No Orders Yet</h1>
         </div>
       )}
     </div>

@@ -11,7 +11,7 @@ const Nav = () => {
     },
     {
       name: "All Products",
-      route: "/products",
+      route: "/all-products",
     },
     {
       name: "Cart",
