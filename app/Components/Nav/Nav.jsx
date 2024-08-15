@@ -17,10 +17,6 @@ const Nav = () => {
       name: "Cart",
       route: "/cart",
     },
-    {
-      name: "Login",
-      route: "/user/login",
-    },
   ];
 
   const loggedInUser = useUserStore((state) => state.loggedInUser);
@@ -52,12 +48,6 @@ const Nav = () => {
             {loggedInUser ? (
               <>
                 <Link
-                  href="/user/profile"
-                  className="hover:text-orange-500 duration-300 ml-3"
-                >
-                  Profile
-                </Link>
-                <Link
                   href="/admin"
                   className="hover:text-orange-500 duration-300 ml-3"
                 >
@@ -71,7 +61,12 @@ const Nav = () => {
                 </button>
               </>
             ) : (
-              ""
+              <Link
+                href="/user/login"
+                className="hover:text-orange-500 duration-300 ml-3"
+              >
+                Login
+              </Link>
             )}
           </div>
 
@@ -118,14 +113,6 @@ const Nav = () => {
             <>
               <li>
                 <Link
-                  href="/user/profile"
-                  className="hover:text-orange-500 duration-300 ml-3"
-                >
-                  Profile
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/admin"
                   className="hover:text-orange-500 duration-300 ml-3"
                 >
@@ -142,7 +129,14 @@ const Nav = () => {
               </li>
             </>
           ) : (
-            ""
+            <li>
+              <Link
+                href="/user/login"
+                className="hover:text-orange-500 duration-300 ml-3"
+              >
+                Login
+              </Link>
+            </li>
           )}
         </ul>
       </div>
