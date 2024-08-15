@@ -28,16 +28,16 @@ const Product = ({ product }) => {
           {product?.name}
         </p>
         <p className="mt-2 font-semibold text-center text-xs xl:text-base">
-          $
           {(
             parseFloat(product?.price) -
             (parseFloat(product?.price) * parseFloat(product?.discount)) / 100
-          ).toFixed(2)}
+          ).toFixed(2)}{" "}
+          tk
           {parseFloat(product?.discount) > 0 ? (
             <>
               {" "}
               <span className="text-sm line-through text-gray-300">
-                ${parseFloat(product?.price).toFixed(2)}
+                {parseFloat(product?.price).toFixed(2)} tk
               </span>
             </>
           ) : (
@@ -124,20 +124,20 @@ const Product = ({ product }) => {
                     <>
                       {" "}
                       <span className="text-sm line-through text-gray-300">
-                        ${parseFloat(product?.price).toFixed(2)}
+                        {parseFloat(product?.price).toFixed(2)} tk
                       </span>{" "}
                       <br />
                     </>
                   ) : (
                     ""
                   )}
-                  $
                   {(
                     parseFloat(product?.price) -
                     (parseFloat(product?.price) *
                       parseFloat(product?.discount)) /
                       100
-                  ).toFixed(2)}
+                  ).toFixed(2)}{" "}
+                  tk
                 </p>
                 <div className="mt-5 rating">
                   <input

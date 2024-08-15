@@ -46,7 +46,7 @@ const Cart = () => {
                     {cart_item?.product?.name}
                   </div>
                   <div className="font-semibold text-center">
-                    ${cart_item?.product?.price}
+                    {cart_item?.product?.price} tk
                   </div>
                   <div className="font-semibold">
                     <div className="flex items-center border w-1/2 mx-auto pl-3 rounded">
@@ -78,22 +78,22 @@ const Cart = () => {
                   </div>
                   <div className="font-semibold text-center">
                     <p>
-                      $
                       {(
                         (cart_item?.product?.price -
                           (cart_item?.product?.price *
                             cart_item?.product?.discount) /
                             100) *
                         cart_item?.quantity
-                      ).toFixed(2)}
+                      ).toFixed(2)}{" "}
+                      tk
                       {cart_item?.product?.discount > 0 ? (
                         <>
                           {" "}
                           <span className="text-sm line-through text-gray-300">
-                            $
                             {(
                               cart_item?.product?.price * cart_item?.quantity
-                            ).toFixed(2)}
+                            ).toFixed(2)}{" "}
+                            tk
                           </span>
                         </>
                       ) : (
@@ -132,7 +132,7 @@ const Cart = () => {
             <div className="w-11/12 xl:w-1/4 border rounded">
               <div className="grid grid-cols-2 gap-3 px-4 py-3 font-semibold border-b">
                 <p>Subtotal</p>
-                <p>${totalPrice}</p>
+                <p>{totalPrice} tk</p>
               </div>
               <div className="grid grid-cols-2 gap-3 px-4 py-3 font-semibold border-b">
                 <p>Shipping</p>
@@ -140,7 +140,7 @@ const Cart = () => {
               </div>
               <div className="grid grid-cols-2 gap-3 px-4 py-3 font-semibold">
                 <p>Total</p>
-                <p>${totalPrice}</p>
+                <p>{totalPrice} tk</p>
               </div>
             </div>
             <div className="mt-5 w-11/12 xl:w-1/4">

@@ -123,14 +123,14 @@ const Checkout = () => {
                       <p className="col-span-3">{cart_item?.product?.name}</p>
                       <p className="text-center">x {cart_item?.quantity}</p>
                       <p className="text-end">
-                        $
                         {(
                           (cart_item?.product?.price -
                             (cart_item?.product?.price *
                               cart_item?.product?.discount) /
                               100) *
                           cart_item?.quantity
-                        ).toFixed(2)}
+                        ).toFixed(2)}{" "}
+                        tk
                       </p>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ const Checkout = () => {
                 <div className="py-3">
                   <div className="grid grid-cols-2 py-2 font-semibold">
                     <p>Subtotal</p>
-                    <p className="text-end">${totalPrice}</p>
+                    <p className="text-end">{totalPrice} tk</p>
                   </div>
                   <div className="grid grid-cols-2 py-2 font-semibold">
                     <p>Shipping</p>
@@ -146,7 +146,7 @@ const Checkout = () => {
                   </div>
                   <div className="grid grid-cols-2 py-2 font-semibold">
                     <p>Total</p>
-                    <p className="text-end">${totalPrice}</p>
+                    <p className="text-end">{totalPrice} tk</p>
                   </div>
                 </div>
                 <div className="mt-2">
