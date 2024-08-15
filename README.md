@@ -11,11 +11,11 @@
 - Cart ✅
   - Delete from card ✅
   - Checkout ✅
-- Admin
-  - Dashboard
-- Admin
-  - Order List
-  - Order Details
+- Admin ✅
+  - Dashboard ✅
+- Admin ✅
+  - Order List ✅
+  - Order Details ✅
 
 ## Used Tools
 
